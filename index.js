@@ -24,6 +24,9 @@ if (!fs.existsSync(LEADS_FILE)) {
   fs.writeFileSync(LEADS_FILE, '[]');
 }
 
+// Root endpoint for health checks
+app.get('/', (req, res) => res.send('OK'));
+
 // Health check endpoint
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
