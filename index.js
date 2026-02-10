@@ -24,6 +24,9 @@ if (!fs.existsSync(LEADS_FILE)) {
   fs.writeFileSync(LEADS_FILE, '[]');
 }
 
+// Health check endpoint
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
+
 // API: Submit lead
 app.post('/api/lead', (req, res) => {
   const { email, source = 'popup' } = req.body;
