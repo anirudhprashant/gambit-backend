@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odoo Implementation Checklist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gumroad: {
+              bg: '#FFFFFF',
+              black: '#000000',
+              green: '#CCFF00',
+              pink: '#FF0099',
+              cyan: '#00FFFF',
+              yellow: '#FFFF00',
+              red: '#FF4400',
+              purple: '#9D00FF',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Bebas Neue', 'sans-serif'],
+            gabarito: ['Gabarito', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @page { size: A4; margin: 0; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .check-empty::before { content: "☐ "; font-size: 1.2em; }
+    .check-done::before { content: "☑ "; font-size: 1.2em; color: #CCFF00; }
+  </style>
+</head>
+<body class="bg-white text-black font-sans p-10">
+
+  <!-- Header -->
+  <header class="mb-10 border-b-4 border-black pb-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-4xl font-display uppercase mb-2">Odoo Implementation</h1>
+        <p class="text-xl font-gabarito text-gumroad-green">Complete Checklist</p>
+      </div>
+      <div class="text-right">
+        <div class="w-16 h-16 bg-gumroad-pink border-4 border-black flex items-center justify-center shadow-hard">
+          <span class="font-black text-white text-2xl">GL</span>
+        </div>
+        <p class="font-bold mt-2">Gambit Labs</p>
+        <p class="text-sm opacity-70">Official Odoo Partner</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="mb-10 bg-gumroad-cyan/10 border-4 border-black p-6 shadow-hard">
+    <h2 class="text-2xl font-gabarito mb-4">How to Use This Checklist</h2>
+    <p class="text-base font-medium leading-relaxed mb-4">
+      This checklist covers the major phases of a successful Odoo implementation. Use it to track your progress, ensure no critical steps are missed, and keep your project on schedule. Each item can be marked as completed by replacing the empty box <span class="check-empty"></span> with a checked box <span class="check-done"></span>.
+    </p>
+    <p class="text-base font-medium leading-relaxed">
+      As an <strong>Official Odoo Partner</strong>, Gambit Labs helps independent businesses implement and customize Odoo without the enterprise price tag. Need hands‑on assistance? Contact us for a free consultation.
+    </p>
+  </section>
+
+  <!-- Phase 1 -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 bg-gumroad-green border-4 border-black flex items-center justify-center shadow-hard">
+        <span class="font-black text-black text-xl">1</span>
+      </div>
+      <h2 class="text-3xl font-gabarito">Pre‑Implementation Planning</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Define project scope, objectives, and success metrics</p>
+        <p class="text-sm opacity-70">Clearly outline what you want to achieve with Odoo.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Identify key stakeholders and form a project team</p>
+        <p class="text-sm opacity-70">Include representatives from all departments that will use Odoo.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Conduct a process review and gap analysis</p>
+        <p class="text-sm opacity-70">Document current workflows and identify improvement areas.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Create a realistic timeline and budget</p>
+        <p class="text-sm opacity-70">Account for data migration, testing, and training.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Choose Odoo edition (Community vs Enterprise) and required apps</p>
+        <p class="text-sm opacity-70">Decide which modules you need: POS, Inventory, CRM, etc.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Select an Odoo partner (if applicable) and sign contract</p>
+        <p class="text-sm opacity-70">A good partner will guide you through the entire process.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 2 -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 bg-gumroad-pink border-4 border-black flex items-center justify-center shadow-hard">
+        <span class="font-black text-black text-xl">2</span>
+      </div>
+      <h2 class="text-3xl font-gabarito">Data Migration & Preparation</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Audit existing data sources (CSV, Excel, legacy systems)</p>
+        <p class="text-sm opacity-70">Know what you have and what needs to be moved.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Clean and deduplicate data before migration</p>
+        <p class="text-sm opacity-70">Garbage in, garbage out.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Map old fields to Odoo data model</p>
+        <p class="text-sm opacity-70">Ensure field types and relationships are compatible.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Perform test migrations with a subset of data</p>
+        <p class="text-sm opacity-70">Validate that data lands correctly.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Fix any errors from test migrations</p>
+        <p class="text-sm opacity-70">Repeat until clean.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Run full migration during a maintenance window</p>
+        <p class="text-sm opacity-70">Schedule downtime if needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 3 -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 bg-gumroad-yellow border-4 border-black flex items-center justify-center shadow-hard">
+        <span class="font-black text-black text-xl">3</span>
+      </div>
+      <h2 class="text-3xl font-gabarito">Customization & Configuration</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Configure company settings, chart of accounts, tax regimes</p>
+        <p class="text-sm opacity-70">Essential for accounting and legal compliance.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Set up users, roles, and access rights (record rules)</p>
+        <p class="text-sm opacity-70">Principle of least privilege.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Install and configure required modules</p>
+        <p class="text-sm opacity-70">POS, Inventory, CRM, Website, etc.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Customize views, reports, and dashboards</p>
+        <p class="text-sm opacity-70">Tailor the UI to match your workflows.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Develop any required custom modules or integrations</p>
+        <p class="text-sm opacity-70">APIs, webhooks, third‑party connections.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Set up automated actions (scheduled jobs, mail templates)</p>
+        <p class="text-sm opacity-70">Reduce manual work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 4 -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 bg-gumroad-purple border-4 border-black flex items-center justify-center shadow-hard">
+        <span class="font-black text-black text-xl">4</span>
+      </div>
+      <h2 class="text-3xl font-gabarito">Testing & Quality Assurance</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Perform unit tests for custom code</p>
+        <p class="text-sm opacity-70">If you've built custom modules, test them thoroughly.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Conduct user acceptance testing (UAT) with key users</p>
+        <p class="text-sm opacity-70">Let real users validate the system works for them.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Validate data integrity in the new system</p>
+        <p class="text-sm opacity-70">Cross‑check reports against old system where possible.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Test performance under load (if high volume expected)</p>
+        <p class="text-sm opacity-70">Simulate peak usage to catch bottlenecks.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Test backup and restore procedures</p>
+        <p class="text-sm opacity-70">Ensure you can recover quickly.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Fix bugs and iterate based on feedback</p>
+        <p class="text-sm opacity-70">Don't rush to launch with known issues.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 5 -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 bg-gumroad-cyan border-4 border-black flex items-center justify-center shadow-hard">
+        <span class="font-black text-black text-xl">5</span>
+      </div>
+      <h2 class="text-3xl font-gabarito">Training & Documentation</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Create user manuals and quick reference guides</p>
+        <p class="text-sm opacity-70">Tailor docs to your organization's processes.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Train end‑users on core functionality</p>
+        <p class="text-sm opacity-70">Hands‑on sessions are best.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Train administrators on maintenance and troubleshooting</p>
+        <p class="text-sm opacity-70">They need to know how to handle common issues.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Record training videos for future hires</p>
+        <p class="text-sm opacity-70">Great for onboarding.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Establish a support process and escalation path</p>
+        <p class="text-sm opacity-70">Who do users contact when something breaks?</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Set up a knowledge base or FAQ</p>
+        <p class="text-sm opacity-70">Reduce repetitive questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase 6 -->
+  <section class="mb-12">
+    <div class="flex items-center gap-4 mb-6">
+      <div class="w-12 h-12 bg-gumroad-red border-4 border-black flex items-center justify-center shadow-hard">
+        <span class="font-black text-black text-xl">6</span>
+      </div>
+      <h2 class="text-3xl font-gabarito">Go‑Live & Post‑Launch</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Final data sync (if any delta) and cutover</p>
+        <p class="text-sm opacity-70">Switch over to the new system.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Monitor system performance and errors closely</p>
+        <p class="text-sm opacity-70">Be ready to react quickly.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Gather user feedback and prioritize fixes</p>
+        <p class="text-sm opacity-70">The first few weeks are critical.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Schedule regular health checks with your partner</p>
+        <p class="text-sm opacity-70">Stay proactive.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Plan for continuous improvement</p>
+        <p class="text-sm opacity-70">Odoo evolves; keep learning.</p>
+      </div>
+      <div class=" bg-white border-4 border-black p-5 shadow-hard">
+        <p class="check-empty font-medium mb-2">Celebrate the milestone!</p>
+        <p class="text-sm opacity-70">You've earned it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-16 pt-8 border-t-4 border-black text-center">
+    <p class="font-gabarito text-xl mb-2">Need Help with Your Odoo Implementation?</p>
+    <p class="mb-4">Gambit Labs is an <strong>Official Odoo Partner</strong>. We help businesses implement, customize, and optimize Odoo — from planning to go‑live and beyond.</p>
+    <div class="inline-block bg-gumroad-pink border-4 border-black px-6 py-3 shadow-hard">
+      <p class="font-black text-sm uppercase">Contact us for a free consultation</p>
+      <p class="text-sm font-bold">https://odoo.gambitlabs.co.uk</p>
+    </div>
+    <p class="mt-8 text-xs opacity-60">© 2025 Gambit Labs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
